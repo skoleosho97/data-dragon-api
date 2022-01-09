@@ -9,4 +9,4 @@ Still under development. This page will be updated once the library is near comp
 
 ### Usage
 
-# Documentation
+## Documentation
