@@ -1,5 +1,5 @@
 {
-  "name": "data-dragon-api",
+  "name": "ddragon",
   "version": "0.1.0",
   "description": "API Wrapper for Riot's Data Dragon API.",
   "main": "index.js",
