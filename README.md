@@ -8,7 +8,7 @@ This module only applies to the DataDragon API at this time. There may be a futu
 ### Installation
 Install the library by running the following line in the terminal:
 
-    $ npm install data-dragon-api
+    $ npm install @skoleosho97/ddragon
 
 ### Usage
 Initialize a new class below like so:
