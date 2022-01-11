@@ -1,9 +1,7 @@
 'use strict';
 
-// Modules
 const axios = require('axios').default;
 
-// Helpers
 const Champion = require('./endpoints/Champion');
 const Item = require('./endpoints/Item');
 const Ability = require('./endpoints/Ability');
@@ -43,7 +41,6 @@ class DataDragon {
      * @param {string} base Base URL endpoint of the API. Automatically set by constructor.
      * @param {string} version Current version of the API. Automatically set by constructor.
      * @param {string} endpoint The remaining URL endpoint.
-     * @returns {Promise} Returns Promise object that contains response data.
      */
     async fetch(endpoint, base = this.BASE, version = this.VERSION) {
         const url = `${base}/${version}/${endpoint}`;

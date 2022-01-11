@@ -1,8 +1,12 @@
+/**
+ * Functions for the Item class.
+ * @class Item
+ * @kind class
+ */
 class Item {
     /**
      * Constructor for the Item class.
-     * @param {Object} config Represents the configuration previously set in 
-     * <br>the DataDragon class constructor.
+     * @param {Object} config Configuration that is automatically set from the DataDragon class.
      */
      constructor(config) {
         this.CONFIG = config;
@@ -10,46 +14,63 @@ class Item {
   
     /**
      * Returns the information listed for all items.
-     * @returns {Promise} Returns Promise object that contains the requested item data.
      */
     async get_all() {
         let data = await this.CONFIG.fetch(`data/${this.CONFIG.LANG}/item.json`);
         let items = data.data;
+
+        return items;
+    }
+
+        /**
+     * Sorts items by total gold price.
+     * @param {number} switch_case Switch case to determine order. 0 - Ascending | 1 - Descending
+     */
+    async sort_by_price(switch_case) {
+        let data = await this.CONFIG.fetch(`data/${this.CONFIG.LANG}/item.json`);
+        let items = Object.values(data.data);
+
+        switch (switch_case)  {
+            case 0:
+                items.sort((a, b) => {
+                    return a.gold['total'] - b.gold['total'];
+                })
+            
+            case 1:
+                items.sort((a, b) => {
+                    return b.gold['total'] - a.gold['total'];
+                })             
+        }
+
         return items;
     }
 
     /**
-     * Returns the id for the given item.
-     * @param {string} item_name The name of the requested item. Case sensitive.
-     * @param {Object} items Item object data to be iterated.
-     * @returns {*} Returns item id.
-     */
-    get_item_id(item_name, items) {
-        Object.keys(items).map(key => {
-            if (items[key].name == item_name) {
-                
-            }
-        })
-    }
-
-    /**
      * Returns the image file of the requested item.
-     * @param {*} item_id The id of the requested item.
-     * @returns {Promise} Promise object containing the requested image.
+     * @param {string} item_id Item ID of the requested item.
      */
     async get_item_img(item_id) {
-        let data = await this.CONFIG.fetch(`img/item/${item_id}.png`);
+        let image = await this.CONFIG.fetch(`img/item/${item_id}.png`);
 
-        return data;
+        return image;
     }
 
     /**
      * Returns a list of items with the given tag.
-     * @param {string} tag_name The tag the function will check every item for.
-     * @param {Object} items Item object data to be iterated.
+     * @param {string} tag_name String that every item will be checked for. Case sensitive.
      */
-    filter_by_tag(tag_name, items) {
-        
+    async filter_by_tag(tag_name) {
+        let data = await this.CONFIG.fetch(`data/${this.CONFIG.LANG}/item.json`);
+
+        let items = data.data;
+
+        Object.keys(items).map(key => {
+            if (!items[key].tags.includes(tag_name)) {
+                delete items[key];
+            }
+        })
+
+        return items;
     }
 }
 

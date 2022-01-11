@@ -1,3 +1,8 @@
+/**
+ * Functions for the Champion class.
+ * @class Champion
+ * @kind class
+ */
 class Champion {
     /**
      * Constructor for the Champion class.
@@ -10,7 +15,6 @@ class Champion {
 
     /**
      * Gets the information listed for all champions.
-     * @returns {Promise} Returns Promise object that contains the requested champion data.
      */
     async get_all() {
         let data = await this.CONFIG.fetch(`data/${this.CONFIG.LANG}/champion.json`);
@@ -22,16 +26,11 @@ class Champion {
     /**
      * Gets the square image file of the requested champion.
      * @param {string} champion_name The name of the champion requested. Case sensitive, no spaces.
-     * @returns {Promise} Returns Promise object that contains the requested champion image.
      */
     async get_champion_img(champion_name) {
-        return this.CONFIG.fetch(`img/champion/${champion_name}.png`)
-            .then(data => {
-                return data;
-            })
-            .catch(e => {
-                console.log(e);
-            })
+        let image = this.CONFIG.fetch(`img/champion/${champion_name}.png`);
+
+        return image;
     }
 }
 

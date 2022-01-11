@@ -1,3 +1,8 @@
+/**
+ * Functions for the Ability class.
+ * @class Ability
+ * @kind class
+ */
 class Ability {
     /**
      * Constructor for the Ability class.
@@ -10,8 +15,7 @@ class Ability {
 
     /**
      * Returns the information listed for all abilities.
-     * @param {string} champion_name The name of the requested champion.
-     * @returns {Promise} Returns Promise object of requested champion's abilities.
+     * @param {string} champion_name The champion whose abilities will be searched for.
      */
     async get_all(champion_name) {
         let data = await this.CONFIG.fetch(`data/${this.CONFIG.LANG}/champion/${champion_name}.json`);
