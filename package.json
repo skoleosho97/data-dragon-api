@@ -1,14 +1,19 @@
 {
-  "name": "riotdd-api",
-  "version": "1.0.0",
-  "description": "",
+  "name": "data-dragon-api",
+  "version": "0.1.0",
+  "description": "API Wrapper for Riot's Data Dragon API.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node tests/cmd.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["api-wrapper, data-dragon"],
+  "author": "Samson Koleosho",
+  "license": "MIT",
+  "homepage": "https://github.com/skoleosho97/data-dragon-api",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skoleosho97/data-dragon-api.git"
+  },
   "devDependencies": {
     "eslint": "^8.6.0",
     "eslint-config-prettier": "^8.3.0",
