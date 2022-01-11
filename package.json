@@ -1,12 +1,14 @@
 {
   "name": "@skoleosho97/ddragon",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "API Wrapper for Riot's Data Dragon API.",
   "main": "index.js",
   "scripts": {
     "test": "node tests/cmd.js"
   },
-  "keywords": ["api-wrapper, data-dragon"],
+  "keywords": [
+    "api-wrapper, data-dragon"
+  ],
   "author": "Samson Koleosho",
   "license": "MIT",
   "homepage": "https://github.com/skoleosho97/data-dragon-api",
