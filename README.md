@@ -1,4 +1,9 @@
 ## DataDragon API
+<div align="left">
+	<p>
+		<a href="https://www.npmjs.com/package/@skoleosho97/ddragon"><img src="https://img.shields.io/badge/npm-0.1.0-orange?style=flat-square&logo=appveyor" alt="npm" /></a>
+	</p>
+</div>
 An API Wrapper creating with Node.js for Riot's DataDragon API. Not affiliated with Riot Games. This project is currently in an "open beta" phase, with many features still not yet implemented and still in the planning stage.
 
 This module was built as both a learning experience and a resource for anyone learning how to handle requests and create their own library. Most of my own code here is not the best, but I hope people are able to take something new away from looking through it.
