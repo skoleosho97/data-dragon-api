@@ -26,7 +26,7 @@ class Item {
      * Sorts items by total gold price.
      * @param {number} switch_case Switch case to determine order. 0 - Ascending | 1 - Descending
      */
-    async sort_by_price(switch_case) {
+    async sort_by_price(switch_case = 0) {
         let data = await this.CONFIG.fetch(`data/${this.CONFIG.LANG}/item.json`);
         let items = Object.values(data.data);
 
